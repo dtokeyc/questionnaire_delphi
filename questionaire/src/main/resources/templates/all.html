@@ -4,6 +4,8 @@
 
 <head>
     <title>分析结果</title>
+    <script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
 </head>
@@ -15,25 +17,180 @@
     <h2 style="color:green">背景调研和分析结果</h2>
     <br><br>
 
-<!--    <table class="table table-bordered table table-hover" style="width:800px">-->
-<!--        <tr style="color:red">-->
-<!--            <th>学号</th>-->
-<!--            <th>最低消费(元)</th>-->
-<!--            <th>最适消费(元)</th>-->
-<!--            <th>最高消费(元)</th>-->
-<!--            <th>City</th>-->
-<!--        </tr>-->
-<!--        <tr th:each="user : ${users}">-->
-<!--            <td th:text="${user.xuehao}">学号</td>-->
-<!--            <td th:text="${user.xiaofei_min}">24</td>-->
-<!--            <td th:text="${user.xiaofei_zuishi}">M</td>-->
-<!--            <td th:text="${user.xiaofei_zuigao}">30</td>-->
-<!--            <td th:text="${user.xfzb_sp}">New York</td>-->
-<!--        </tr>-->
-<!--    </table>-->
+
     <a href="https://downdoc.wjx.cn/statdown/71022084/%E5%8C%97%E6%9E%97%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%96%AB%E6%83%85%E6%9C%9F%E9%97%B4%E6%B6%88%E8%B4%B9%E6%83%85%E5%86%B5%E8%B0%83%E6%9F%A5_71022084.docx?Expires=1587253665&OSSAccessKeyId=LTAIkYiHONyE2mHz&Signature=aHIC%2B8Pxpy%2FquU9l2854VepgWho%3D"><button type="button" class="btn btn-info">北林大学生疫情期间消费情况调查.docx</button></a>
     <a href="https://downdoc.wjx.cn/statdown/70981233/%E5%8C%97%E6%9E%97%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%96%AB%E6%83%85%E5%89%8D%E6%B6%88%E8%B4%B9%E6%83%85%E5%86%B5%E8%B0%83%E6%9F%A5_70981233.docx?Expires=1587253699&OSSAccessKeyId=LTAIkYiHONyE2mHz&Signature=mgVf5YQH9GxuLDwVdfgnhGP9pxs%3D"><button type="button" class="btn btn-info">北林大学生疫情前消费情况调查.docx</button></a>
     <br><br>
+
+<!--        <table class="table table-bordered table table-hover" style="width:800px">-->
+<!--            <tr style="color:red">-->
+<!--                <th>学号</th>-->
+<!--                <th>最低消费(元)</th>-->
+<!--                <th>最适消费(元)</th>-->
+<!--                <th>最高消费(元)</th>-->
+<!--                <th>City</th>-->
+<!--            </tr>-->
+<!--            <tr th:each="user : ${users}">-->
+<!--                <td th:text="${user.xuehao}"></td>-->
+<!--                <td th:text="${user.xiaofei_min}"></td>-->
+<!--                <td th:text="${user.xiaofei_zuishi}"></td>-->
+<!--                <td th:text="${user.xiaofei_zuigao}"></td>-->
+<!--                <td th:text="${user.xfzb_sp}"></td>-->
+<!--            </tr>-->
+<!--        </table>-->
+
+
+<!--    <div id="main1" style="width: 800px;height:450px;"></div>-->
+
+<!--    <script type="text/javascript">-->
+<!--        // 基于准备好的dom，初始化echarts实例-->
+<!--        var sum1=0,sum2=0,sum3=0;-->
+
+
+<!--        var myChart = echarts.init(document.getElementById('main1'));-->
+
+<!--        // 指定图表的配置项和数据-->
+<!--        var option = {-->
+<!--            title: {-->
+<!--                text: '专家预测疫情后消费柱状图'-->
+<!--            },-->
+<!--            tooltip: {},-->
+<!--            legend: {-->
+<!--                data:['销量']-->
+<!--            },-->
+<!--            xAxis: {-->
+<!--                data: ["最低消费", "最适消费","最高消费"]-->
+<!--            },-->
+<!--            yAxis: {},-->
+<!--            series: [{-->
+<!--                name: '预估金额',-->
+<!--                type: 'bar',-->
+<!--                data: [10, 20, 36]-->
+<!--            }]-->
+<!--        };-->
+
+<!--        // 使用刚指定的配置项和数据显示图表。-->
+<!--        myChart.setOption(option);-->
+<!--    </script>-->
+
+<!--    <div id="main2" style="width: 800px;height:600px;"></div>-->
+<!--    <script type="text/javascript">-->
+<!--        // 基于准备好的dom，初始化echarts实例-->
+<!--        var myChart = echarts.init(document.getElementById('main2'));-->
+
+<!--        // 指定图表的配置项和数据-->
+<!--        var option = {-->
+<!--            title: {-->
+<!--                text: '专家预测疫情后消费分布图'-->
+<!--            },-->
+<!--            tooltip: {-->
+<!--                trigger: 'item',-->
+<!--                formatter: '{a} <br/>{b}: {c} ({d}%)'-->
+<!--            },-->
+<!--            legend: {-->
+<!--                orient: 'vertical',-->
+<!--                right: 20,-->
+<!--                data: ['食品餐饮', '日用品、卫生医药用品', '服饰与美容', '交通与通讯', '交往聚会',-->
+<!--                    '自我学习增值（文具书籍等）', '游戏娱乐']-->
+<!--            },-->
+<!--            series: [-->
+<!--                {-->
+<!--                    name: '消费种类',-->
+<!--                    type: 'pie',-->
+<!--                    radius: ['50%', '70%'],-->
+<!--                    avoidLabelOverlap: false,-->
+<!--                    label: {-->
+<!--                        show: false,-->
+<!--                        position: 'center'-->
+<!--                    },-->
+<!--                    emphasis: {-->
+<!--                        label: {-->
+<!--                            show: true,-->
+<!--                            fontSize: '30',-->
+<!--                            fontWeight: 'bold'-->
+<!--                        }-->
+<!--                    },-->
+<!--                    labelLine: {-->
+<!--                        show: false-->
+<!--                    },-->
+<!--                    data: [-->
+<!--                        {value: 15, name: '食品餐饮'},-->
+<!--                        {value: 109, name: '日用品、卫生医药用品'},-->
+<!--                        {value: 12.6, name: '服饰与美容'},-->
+<!--                        {value: 13, name: '交通与通讯'},-->
+<!--                        {value: 11, name: '交往聚会'},-->
+<!--                        {value: 16, name: '自我学习增值（文具书籍等）'},-->
+<!--                        {value: 4, name: '游戏娱乐'}-->
+<!--                    ]-->
+<!--                }-->
+<!--            ]-->
+<!--        };-->
+
+<!--        // 使用刚指定的配置项和数据显示图表。-->
+<!--        myChart.setOption(option);-->
+<!--    </script>-->
+    <div id="main" style="width: 800px;height:450px;"></div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('main'));
+            //数据加载完之前先显示一段简单的loading动画
+            myChart.showLoading();
+            var xiaofei_min=[];    //纵坐标数组（实际用来盛放Y坐标值）
+            var xiaofei_zuishi=[];
+            var xiaofei_zuigao=[];
+            $.ajax({
+                type : "post",
+                async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+                url : "/test",    //请求发送到dataActiont处
+                data : {},
+                dataType : "text",        //返回数据形式为json
+                success : function(result) {
+                    //请求成功时执行该函数内容，result即为服务器返回的json对象
+                    if (result) {
+                        for(var i=0;i<result.length;i++){
+                            xiaofei_min.push(result[i].xiaofei_min);
+                            xiaofei_zuishi.push(result[i].xiaofei_zuishi);
+                            xiaofei_zuigao.push(result[i].xiaofei_zuigao);
+                        }
+                        myChart.hideLoading();    //隐藏加载动画
+                        myChart.setOption({
+                            //加载数据图表
+                            title:{
+                                text: '专家预测疫情后消费柱状图'
+                            },
+
+                            legend: {
+                                data:['指标类型']
+                            },
+                            xAxis: {
+                                data: ['最低消费（元）', '最适消费（元）', '最高消费（元）'],
+                                axisLabel:{
+                                    interval: 0
+                                }
+
+                            },
+                            yAxis: {
+                                type: 'value'
+                            },
+                            series: [{
+                                // 根据名字对应到相应的系列
+                                name: '数量',
+                                type: 'bar',
+                                data: [100, 200, 300]
+                            }]
+                        });
+                    }
+                },
+                error : function(errorMsg) {
+                    //请求失败时执行该函数
+                    alert("图表请求数据失败!");
+                    myChart.hideLoading();
+                }
+            });//end ajax
+        });
+    </script>
+
     <p>
         <a href="/greeting"><button type="button" class="btn btn-primary">返回首页</button></a>
     </p>
