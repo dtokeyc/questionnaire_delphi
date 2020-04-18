@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>欢迎使用预测系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+<center>
+    <br><br>
+    <h2 style="color:green">欢迎使用疫情后大学生消费预测系统</h2>
+    <br><br>
+
+    <form class="form-horizontal" role="form" action="#" th:action="@{/greeting}" th:object="${user}" method="post">
+
+        <div class="form-group" style="width:300px">
+            <label for="xuehao" class="col-sm-2 control-label">学号</label>
+            <div class="col-sm-10">
+                <input type="text"  th:field="*{xuehao}" class="form-control" id="xuehao" placeholder="请输入学号">
+            </div>
+        </div>
+
+        <div class="form-group" style="width:300px">
+            <label for="xiaofei_min" class="col-sm-2 control-label">最低消费（元）</label>
+            <div class="col-sm-10">
+                <input type="number" th:field="*{xiaofei_min}" class="form-control" id="xiaofei_min" placeholder="例如：500 ">
+            </div>
+        </div>
+
+        <div class="form-group" style="width:300px">
+            <label for="xiaofei_zuishi" class="col-sm-2 control-label">最适消费（元）</label>
+            <div class="col-sm-10">
+                <input type="number" th:field="*{xiaofei_zuishi}" class="form-control" id="xiaofei_zuishi" placeholder="例如：1500">
+            </div>
+        </div>
+
+        <div class="form-group" style="width:300px">
+            <label for="xiaofei_zuigao" class="col-sm-2 control-label">最高消费（元）</label>
+            <div class="col-sm-10">
+                <input type="number" th:field="*{xiaofei_zuigao}" class="form-control" id="xiaofei_zuigao" placeholder="例如：4000">
+            </div>
+        </div>
+
+        <div class="form-group" style="width:300px">
+            <label for="xfzb_sp" class="col-sm-2 control-label">食品餐饮(%)</label>
+            <div class="col-sm-10">
+                <input type="number" th:field="*{xfzb_sp}" class="form-control" id="xfzb_sp" placeholder="例如：30">
+            </div>
+        </div>
+
+
+        <div class="form-group" style="width:300px">
+            <label for="xfzb_ry" class="col-sm-2 control-label">日用品、卫生及医药用品(%)</label>
+            <div class="col-sm-10">
+                <input type="number" th:field="*{xfzb_ry}" class="form-control" id="xfzb_ry" placeholder="例如：30">
+            </div>
+        </div>
+
+        <div class="form-group" style="width:300px">
+            <label for="xfzb_fs" class="col-sm-2 control-label">服饰与美容(%)</label>
+            <div class="col-sm-10">
+                <input type="number" th:field="*{xfzb_fs}" class="form-control" id="xfzb_fs" placeholder="例如：30">
+            </div>
+        </div>
+
+        <div class="form-group" style="width:300px">
+            <label for="xfzb_tx" class="col-sm-2 control-label">交通与通讯(%)</label>
+            <div class="col-sm-10">
+                <input type="number" th:field="*{xfzb_tx}" class="form-control" id="xfzb_tx" placeholder="例如：30">
+            </div>
+        </div>
+
+        <div class="form-group" style="width:300px">
+            <label for="xfzb_jw" class="col-sm-2 control-label">交往聚会、恋爱(%)</label>
+            <div class="col-sm-10">
+                <input type="number" th:field="*{xfzb_jw}" class="form-control" id="xfzb_jw" placeholder="例如：30">
+            </div>
+        </div>
+
+        <div class="form-group" style="width:300px">
+            <label for="xfzb_zw" class="col-sm-2 control-label">自我学习增值（文具、书籍、培训费等）(%)</label>
+            <div class="col-sm-10">
+                <input type="number" th:field="*{xfzb_zw}" class="form-control" id="xfzb_zw" placeholder="例如：30">
+            </div>
+        </div>
+
+        <div class="form-group" style="width:300px">
+            <label for="xfzb_yx" class="col-sm-2 control-label">游戏娱乐(%)</label>
+            <div class="col-sm-10">
+                <input type="number" th:field="*{xfzb_yx}" class="form-control" id="xfzb_yx" placeholder="例如：30">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div>
+                <button type="submit" class="btn btn-primary" id="btn">提交</button>
+                <input type="reset" class="btn btn-warning" value="重置" />
+            </div>
+        </div>
+    </form>
+
+</center>
+
+</body>
+
+</html>
