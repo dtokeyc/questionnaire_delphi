@@ -11,11 +11,7 @@ public class User {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
-    //    private String name;
-//    private Integer age;
-//    private String gender;
-//    private String email;
-//    private String city;
+    private Integer lun;
     private Integer xuehao;
     private Double xiaofei_min;
     private Double xiaofei_zuigao;
@@ -27,6 +23,14 @@ public class User {
     private Double xfzb_jw;
     private Double xfzb_zw;
     private Double xfzb_yx;
+
+    public Integer getLun() {
+        return lun;
+    }
+
+    public void setLun(Integer lun) {
+        this.lun = lun;
+    }
 
     public Integer getXuehao() {
         return xuehao;
@@ -117,7 +121,6 @@ public class User {
     }
 
 
-
     public Integer getId() {
         return id;
     }
@@ -125,45 +128,5 @@ public class User {
     public void setId(Integer id) {
         this.id = id;
     }
-
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-
-//    public Integer getAge() {
-//        return age;
-//    }
-//
-//    public void setAge(Integer age) {
-//        this.age = age;
-//    }
-//
-//    public String getGender() {
-//        return gender;
-//    }
-//
-//    public void setGender(String gender) {
-//        this.gender = gender;
-//    }
-//
-//    public String getEmail() {
-//        return email;
-//    }
-//
-//    public void setEmail(String email) {
-//        this.email = email;
-//    }
-//
-//    public String getCity() {
-//        return city;
-//    }
-//
-//    public void setCity(String city) {
-//        this.city = city;
-//    }
 
 }
