@@ -3,10 +3,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
     <title>分析结果</title>
-    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
-    <script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
 </head>
@@ -15,34 +12,28 @@
 
 <center>
     <br><br>
-    <h2 style="color:green">分析结果</h2>
+    <h2 style="color:green">背景调研和分析结果</h2>
     <br><br>
 
-<!--    <div id="main" style="width: 600px;height:400px;position:absolute;top:50%;left: 50%;margin-top: -200px;margin-left: -300px;"></div>-->
-    <div id="main" style="width: 600px;height:400px;"></div>
-    <script type="text/javascript">
-        var myChart = echarts.init(document.getElementById('main'));
-        var option = {
-            title: {
-                text: 'ECharts 入门示例'
-            },
-            tooltip: {},
-            legend: {
-                data:['销量']
-            },
-            xAxis: {
-                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
-            },
-            yAxis: {},
-            series: [{
-                name: '销量',
-                type: 'bar',
-                data: [5, 20, 36, 10, 10, 20]
-            }]
-        };
-        myChart.setOption(option);
-    </script>
-
+<!--    <table class="table table-bordered table table-hover" style="width:800px">-->
+<!--        <tr style="color:red">-->
+<!--            <th>学号</th>-->
+<!--            <th>最低消费(元)</th>-->
+<!--            <th>最适消费(元)</th>-->
+<!--            <th>最高消费(元)</th>-->
+<!--            <th>City</th>-->
+<!--        </tr>-->
+<!--        <tr th:each="user : ${users}">-->
+<!--            <td th:text="${user.xuehao}">学号</td>-->
+<!--            <td th:text="${user.xiaofei_min}">24</td>-->
+<!--            <td th:text="${user.xiaofei_zuishi}">M</td>-->
+<!--            <td th:text="${user.xiaofei_zuigao}">30</td>-->
+<!--            <td th:text="${user.xfzb_sp}">New York</td>-->
+<!--        </tr>-->
+<!--    </table>-->
+    <a href="https://downdoc.wjx.cn/statdown/71022084/%E5%8C%97%E6%9E%97%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%96%AB%E6%83%85%E6%9C%9F%E9%97%B4%E6%B6%88%E8%B4%B9%E6%83%85%E5%86%B5%E8%B0%83%E6%9F%A5_71022084.docx?Expires=1587253665&OSSAccessKeyId=LTAIkYiHONyE2mHz&Signature=aHIC%2B8Pxpy%2FquU9l2854VepgWho%3D"><button type="button" class="btn btn-info">北林大学生疫情期间消费情况调查.docx</button></a>
+    <a href="https://downdoc.wjx.cn/statdown/70981233/%E5%8C%97%E6%9E%97%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%96%AB%E6%83%85%E5%89%8D%E6%B6%88%E8%B4%B9%E6%83%85%E5%86%B5%E8%B0%83%E6%9F%A5_70981233.docx?Expires=1587253699&OSSAccessKeyId=LTAIkYiHONyE2mHz&Signature=mgVf5YQH9GxuLDwVdfgnhGP9pxs%3D"><button type="button" class="btn btn-info">北林大学生疫情前消费情况调查.docx</button></a>
+    <br><br>
     <p>
         <a href="/greeting"><button type="button" class="btn btn-primary">返回首页</button></a>
     </p>

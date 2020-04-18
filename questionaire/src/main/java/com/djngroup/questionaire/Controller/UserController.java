@@ -1,6 +1,9 @@
 package com.djngroup.questionaire.Controller;
 import com.djngroup.questionaire.entity.User;
+
 import com.djngroup.questionaire.UserRepository;
+
+
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,12 +27,7 @@ public class UserController {
     public String greetingSubmit(@ModelAttribute User user) {
 
         User newUser = new User();
-
-//        newUser.setName(user.getName());
-//        newUser.setAge(user.getAge());
-//        newUser.setGender(user.getGender());
-//        newUser.setEmail(user.getEmail());
-//        newUser.setCity(user.getCity());
+        newUser.setLun(user.getLun());
         newUser.setXuehao(user.getXuehao());
         newUser.setXiaofei_min(user.getXiaofei_min());
         newUser.setXiaofei_zuishi(user.getXiaofei_zuishi());
