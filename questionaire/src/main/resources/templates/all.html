@@ -3,7 +3,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
+    <meta charset="UTF-8">
     <title>分析结果</title>
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
 </head>
@@ -15,22 +18,30 @@
     <h2 style="color:green">分析结果</h2>
     <br><br>
 
-<!--    <table class="table table-bordered table table-hover" style="width:800px">-->
-<!--        <tr style="color:red">-->
-<!--            <th>学号</th>-->
-<!--            <th>最低消费（元）</th>-->
-<!--            <th>最适消费（元）</th>-->
-<!--            <th>最高消费（元）</th>-->
-<!--            <th>City</th>-->
-<!--        </tr>-->
-<!--        <tr th:each="user : ${users}">-->
-<!--            <td th:text="${user.xuehao}">学号</td>-->
-<!--            <td th:text="${user.xiaofei_min}">24</td>-->
-<!--            <td th:text="${user.xiaofei_zuishi}">M</td>-->
-<!--            <td th:text="${user.xiaofei_zuigao}">30</td>-->
-<!--            <td th:text="${user.xfzb_sp}">New York</td>-->
-<!--        </tr>-->
-<!--    </table>-->
+<!--    <div id="main" style="width: 600px;height:400px;position:absolute;top:50%;left: 50%;margin-top: -200px;margin-left: -300px;"></div>-->
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main'));
+        var option = {
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            tooltip: {},
+            legend: {
+                data:['销量']
+            },
+            xAxis: {
+                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };
+        myChart.setOption(option);
+    </script>
 
     <p>
         <a href="/greeting"><button type="button" class="btn btn-primary">返回首页</button></a>
