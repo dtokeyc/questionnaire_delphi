@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>提交结果</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+<center>
+    <br><br>
+    <h2 style="color:green">您的提交结果</h2>
+    <br><br>
+
+    <ul class="list-group" style="width:300px">
+        <li class="list-group-item" th:text="'学号: ' + ${user.xuehao}"></li>
+        <li class="list-group-item" th:text="'最低消费（元）: ' + ${user.xiaofei_min}"></li>
+        <li class="list-group-item" th:text="'最适消费（元）: ' + ${user.xiaofei_zuishi}"></li>
+        <li class="list-group-item" th:text="'最高消费（元）: ' + ${user.xiaofei_zuigao}"></li>
+        <li class="list-group-item" th:text="'消费占比（按整体为100%分配）: ' "></li>
+        <li class="list-group-item" th:text="'食品餐饮（%）: ' + ${user.xfzb_sp}"></li>
+        <li class="list-group-item" th:text="'日用品、卫生及医药用品（%）: ' + ${user.xfzb_ry}"></li>
+        <li class="list-group-item" th:text="'服饰与美容（%）: ' + ${user.xfzb_fs}"></li>
+        <li class="list-group-item" th:text="'交通与通讯（%）: ' + ${user.xfzb_tx}"></li>
+        <li class="list-group-item" th:text="'交往聚会、恋爱（%）: ' + ${user.xfzb_jw}"></li>
+        <li class="list-group-item" th:text="'自我学习增值（文具、书籍、培训费等）（%）: ' + ${user.xfzb_zw}"></li>
+        <li class="list-group-item" th:text="'游戏娱乐（%）: ' + ${user.xfzb_yx}"></li>
+    </ul>
+
+    <h4>
+        <span class="glyphicon glyphicon-saved"></span>
+        已成功写入数据库，如有需要请截图存档
+    </h4>
+
+    <a href="/greeting"><button type="button" class="btn btn-primary">回到调查页面</button></a>
+    <a href="/all"><button type="button" class="btn btn-warning">查看提交记录和分析</button></a>
+
+</body>
+
+</html>
